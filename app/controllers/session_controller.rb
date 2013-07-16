@@ -8,7 +8,7 @@ class SessionController < ApplicationController
 	user = User.authenticate(params[:email], params[:password])
 
 	if user
-		session[:user_id] = user.user_id
+		session[:user_id] = user.id
   		redirect_to root_url
 	else
   		render :new
