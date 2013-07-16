@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe SiteController do
 
+=begin
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
@@ -22,5 +23,7 @@ describe SiteController do
       response.should be_success
     end
   end
+=end
+
 
 end
