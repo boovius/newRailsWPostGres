@@ -1,4 +1,7 @@
 NewRailsWPostGres::Application.routes.draw do
+
+	resources :users
+
   get "privacy" => "site#privacy"
   get "terms" => "site#terms"
 
