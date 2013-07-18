@@ -1,2 +1,33 @@
 <h1>Password#edit</h1>
-<p>Find me in app/views/password/edit.html.erb</p>
+<p>The code is <%= @code %> </p>
+
+
+
+<div class="row">
+	<div class="large-4 columns">
+		<h2>Choose a new Password</h2>
+		<p>
+			Instructions
+		</p>
+	</div> <!-- end large-4 columns -->
+	<div class="large-8 columns">
+		<h1>Log in</h1>
+		<%= form_for @html, html: { autocomplete: :off } do |f| %>
+			<p>
+				<%= f.label :password %>
+				<%= f.text_field :password %>
+			</p>
+			<p>
+				<%= f.label :password_confirmation %>
+				<%= f.text_field :password_confirmation %>
+			</p>
+			<p>
+				<%= f.submit %>
+			</p>
+		<% end %>
+
+	</div> <!-- end 8 columns -->
+
+	<!--<script type="text/javascript" src=""></script>-->
+</div> <!-- end row -->
+

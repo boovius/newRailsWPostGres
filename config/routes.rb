@@ -16,8 +16,8 @@ NewRailsWPostGres::Application.routes.draw do
   # get "password/edit"
   # get "password/update"
 
-  resource :password, only: [ :edit, :update ]
-
+  resource :password, only: [ :update ]
+  get "reset/:code" => "password#edit"
 
   root 'site#index'
 

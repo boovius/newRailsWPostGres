@@ -11,7 +11,7 @@
 				<% @users.each do |user| %>
 				<tr>
 					<td><%= link_to user.email, user %></td>
-					<td><%= link_to user.fish, user %></td>
+					<td><%= user.fish %></td>
 					<td><%= link_to "Edit", edit_user_path(user) %></td>
 					<td><%= link_to "Delete", user, method: :delete, confirm: "Are you certain?" %></td>
 				</tr>
