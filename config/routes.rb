@@ -1,5 +1,6 @@
 NewRailsWPostGres::Application.routes.draw do
 
+  
 	resources :users
 
   get "privacy" => "site#privacy"
@@ -11,6 +12,11 @@ NewRailsWPostGres::Application.routes.draw do
   post "login" => "session#create"
   delete "logout" => "session#destroy"
   get "logout" => "session#destroy"
+
+  # get "password/edit"
+  # get "password/update"
+
+  resource :password, only: [ :edit, :update ]
 
 
   root 'site#index'
