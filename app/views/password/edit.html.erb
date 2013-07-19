@@ -1,33 +1,33 @@
-<h1>Password#edit</h1>
-<p>The code is <%= @code %> </p>
-
-
-
 <div class="row">
-	<div class="large-4 columns">
-		<h2>Choose a new Password</h2>
-		<p>
-			Instructions
-		</p>
+	<div class="large-10 columns large-offset-2">
+		<h1>Set Your Password</h1>
 	</div> <!-- end large-4 columns -->
-	<div class="large-8 columns">
-		<h1>Log in</h1>
-		<%= form_for @html, html: { autocomplete: :off } do |f| %>
+</div>
+<div class="row">
+	<div class="large-3 columns large-offset-2">
+		<%= form_for @user, html: { autocomplete: :off } do |f| %>
 			<p>
-				<%= f.label :password %>
+				<%= f.label :password, autofocus: true%>
 				<%= f.text_field :password %>
 			</p>
 			<p>
 				<%= f.label :password_confirmation %>
 				<%= f.text_field :password_confirmation %>
 			</p>
+			<input type='hidden' id='hidden-strength' name='strength' value='0'>
 			<p>
-				<%= f.submit %>
+				<%= f.submit "Save password", id: 'save-password', class: "button alert disabled" %>
 			</p>
 		<% end %>
+	</div> <!-- end password input boxes and submit button -->
 
-	</div> <!-- end 8 columns -->
+	<div class='large-7 columns'>
+		<div class='progress large-6 strength-meter' >
+			<span id='strength-meter' class='meter w-0'></span>
+		</div> <!-- end div progress strength-meter -->
+		<div>Time to crack: <span id='strength-meter-display'>n/a</span></div>
+	</div>
 
-	<!--<script type="text/javascript" src=""></script>-->
+	<script type="text/javascript" src="/js/zxcvbn-async.js"></script>
 </div> <!-- end row -->
 

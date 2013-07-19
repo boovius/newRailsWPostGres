@@ -1,8 +1,6 @@
 class PasswordController < ApplicationController
   def edit
-  	@code = SecureRandom.urlsafe_base64
-  	#@code = params [:code]
-  	#@user = User.new
+  	@user = User.find_by(code: params[:code])
   end
 
   def update

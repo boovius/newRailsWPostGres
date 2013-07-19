@@ -2,7 +2,7 @@ User.destroy_all
 
 User.create([
   {
-    email: "joe@mama.com",
+    email: "joshua.book@gmail.com",
     password: "12345",
     password_confirmation: "12345"
   },
