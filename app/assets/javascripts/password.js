@@ -24,7 +24,7 @@ $(function(){
 
 	}); /* end #user_password on */
 
-	$('#save-password').on('submit', function(){
+	$('.edit_user').on('submit', function(){
 		if ($('#hidden-strength').val() < MIN_STRENGTH)
 			return false;
 	}); /* end #new_user on */

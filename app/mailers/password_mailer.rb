@@ -7,7 +7,8 @@ class PasswordMailer < ActionMailer::Base
   #   en.password_mailer.password_reset_mailer.subject
   #
   def reset_email(user)
-    @user = user 
+    @user = user
+    @greeting = 'hello' 
     #@url = 'http://localhost:3000/reset/<%= @user.code %>'
     mail to: @user.email, subject: "Change your RAILS credentials"
   end
